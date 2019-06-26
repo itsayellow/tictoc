@@ -7,7 +7,7 @@ here = os.path.abspath(os.path.dirname(__file__))
 
 setup(
         name='tictoc',
-        version='0.1',
+        version='0.2',
         description='Handy timer object.',
         author='Matthew Clapp',
         author_email='itsayellow+dev@gmail.com',

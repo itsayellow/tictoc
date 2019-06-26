@@ -6,15 +6,29 @@ class Timer:
         self.start_time = time.time()
 
     def start(self):
+        """Start this timer.
+        """
         self.start_time = time.time()
 
     def eltime(self):
+        """Return number of seconds since start()
+
+        Returns:
+            float: number of seconds since this instance's start() was called.
+        """
         return time.time() - self.start_time
 
-    def eltime_pr(self, outstring, **print_args):
+    def eltime_h(self):
+        """Return number of seconds since start()
+
+        Returns:
+            str: human-readable time since this instance's start() was called.
+        """
         eltime = time.time() - self.start_time
-        elapsed = str(datetime.timedelta(seconds=eltime))
-        print(outstring + elapsed, **print_args)
+        return str(datetime.timedelta(seconds=eltime))
+
+    def eltime_pr(self, outstring, **print_args):
+        print(outstring + self.eltime_h(), **print_args)
 
     def progress_pr(self, frac_done=0.0, **print_args):
         el_time = time.time() - self.start_time
